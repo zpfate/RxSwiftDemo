@@ -24,6 +24,7 @@
 		5B0478B124F938A100E5C841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B0478B424F938A100E5C841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B0478B624F938A100E5C841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B4FC45C24FCCCD700D51E6A /* RxSwiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RxSwiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		67238076E908AB00B3034CDA /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DA37F81F130B3336E5E655A4 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +68,7 @@
 				5B0478B124F938A100E5C841 /* Assets.xcassets */,
 				5B0478B324F938A100E5C841 /* LaunchScreen.storyboard */,
 				5B0478B624F938A100E5C841 /* Info.plist */,
+				5B4FC45C24FCCCD700D51E6A /* RxSwiftDemo-Bridging-Header.h */,
 			);
 			path = RxSwiftDemo;
 			sourceTree = "<group>";
@@ -85,7 +87,6 @@
 				DA37F81F130B3336E5E655A4 /* Pods-RxSwiftDemo.debug.xcconfig */,
 				67238076E908AB00B3034CDA /* Pods-RxSwiftDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -122,6 +123,7 @@
 				TargetAttributes = {
 					5B0478A624F9389E00E5C841 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -263,7 +265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -317,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -332,6 +334,7 @@
 			baseConfigurationReference = DA37F81F130B3336E5E655A4 /* Pods-RxSwiftDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83J8888V77;
 				INFOPLIST_FILE = RxSwiftDemo/Info.plist;
@@ -341,6 +344,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TwistedFate.www.RxSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RxSwiftDemo/RxSwiftDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -351,6 +356,7 @@
 			baseConfigurationReference = 67238076E908AB00B3034CDA /* Pods-RxSwiftDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83J8888V77;
 				INFOPLIST_FILE = RxSwiftDemo/Info.plist;
@@ -360,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TwistedFate.www.RxSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RxSwiftDemo/RxSwiftDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
