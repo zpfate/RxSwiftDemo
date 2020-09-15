@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
   
+        let usernameValidQuick = nameTextField.rx.text.orEmpty.map{$0.count > 5}.share(replay: 1)
+        
         /// 用户名是否有效
         let usernameValid = nameTextField.rx.text.orEmpty.map { (text) -> Bool in
             /// 名字长度大于5
@@ -50,15 +52,24 @@ class ViewController: UIViewController {
         /// 密码提示语是否显示
         passwordValid.bind(to: pwdTipsLabel.rx.isHidden).disposed(by: disposeBag)
         
-        
-        let valid = Observable.combineLatest(usernameValid, passwordValid)
-        
         /// 两者是否都可以
         let everythingValid = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }.share(replay: 1)
         
         /// 用户名提示有效决定按钮是否可点击
         everythingValid.bind(to: loginBtn.rx.isEnabled).disposed(by: disposeBag)
         
+        /// 点击绿色按钮弹出弹框
+        loginBtn.rx.tap.subscribe { [weak self](text) in
+            
+            self?.showAlert()
+            print(text)
+        }.disposed(by: disposeBag)
+    }
+    
+    
+    func showAlert() -> Void {
+        let alert = UIAlertView(title: "RxExample", message: "This is wonderful!", delegate: nil, cancelButtonTitle: "OK")
+        alert.show()
     }
     
     
@@ -66,6 +77,8 @@ class ViewController: UIViewController {
         let btn = UIButton.init(type: .custom)
         btn.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
         btn.backgroundColor = .red
+        
+        
         btn.rx.tap.subscribe { (oNext) in
          print("act ++++++++++++")
         }.disposed(by: disposeBag)
